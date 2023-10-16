@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A285D4682AD927F300DF45EE /* SwiftUIThienCodevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D4672AD927F300DF45EE /* SwiftUIThienCodevApp.swift */; };
+		8B753D452ADADEDE001FDF22 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B753D442ADADEDE001FDF22 /* Settings.swift */; };
+		8B753D472ADBAC9E001FDF22 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B753D462ADBAC9E001FDF22 /* RadioButton.swift */; };
+		A285D4682AD927F300DF45EE /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D4672AD927F300DF45EE /* MainApp.swift */; };
 		A285D46A2AD927F300DF45EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D4692AD927F300DF45EE /* ContentView.swift */; };
-		A285D46C2AD927F600DF45EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A285D46B2AD927F600DF45EE /* Assets.xcassets */; };
-		A285D46F2AD927F600DF45EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A285D46E2AD927F600DF45EE /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B753D442ADADEDE001FDF22 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		8B753D462ADBAC9E001FDF22 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		A285D4642AD927F300DF45EE /* SwiftUIThienCodev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIThienCodev.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A285D4672AD927F300DF45EE /* SwiftUIThienCodevApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIThienCodevApp.swift; sourceTree = "<group>"; };
+		A285D4672AD927F300DF45EE /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		A285D4692AD927F300DF45EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A285D46B2AD927F600DF45EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A285D46E2AD927F600DF45EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +32,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B753D432ADA87D5001FDF22 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B753D462ADBAC9E001FDF22 /* RadioButton.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		A285D45B2AD927F300DF45EE = {
 			isa = PBXGroup;
 			children = (
@@ -51,20 +59,12 @@
 		A285D4662AD927F300DF45EE /* SwiftUIThienCodev */ = {
 			isa = PBXGroup;
 			children = (
-				A285D4672AD927F300DF45EE /* SwiftUIThienCodevApp.swift */,
+				8B753D432ADA87D5001FDF22 /* Preview Content */,
+				A285D4672AD927F300DF45EE /* MainApp.swift */,
 				A285D4692AD927F300DF45EE /* ContentView.swift */,
-				A285D46B2AD927F600DF45EE /* Assets.xcassets */,
-				A285D46D2AD927F600DF45EE /* Preview Content */,
+				8B753D442ADADEDE001FDF22 /* Settings.swift */,
 			);
 			path = SwiftUIThienCodev;
-			sourceTree = "<group>";
-		};
-		A285D46D2AD927F600DF45EE /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A285D46E2AD927F600DF45EE /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A285D46F2AD927F600DF45EE /* Preview Assets.xcassets in Resources */,
-				A285D46C2AD927F600DF45EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +135,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B753D452ADADEDE001FDF22 /* Settings.swift in Sources */,
 				A285D46A2AD927F300DF45EE /* ContentView.swift in Sources */,
-				A285D4682AD927F300DF45EE /* SwiftUIThienCodevApp.swift in Sources */,
+				A285D4682AD927F300DF45EE /* MainApp.swift in Sources */,
+				8B753D472ADBAC9E001FDF22 /* RadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +275,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +305,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
