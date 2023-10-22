@@ -18,7 +18,7 @@ struct SwiftUIThienCodevApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BasicAnimationView()
         }.onChange(of: scenePhase) { oldValue, newValue in
             switch newValue {
             case .background:

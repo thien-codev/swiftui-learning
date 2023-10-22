@@ -16,29 +16,34 @@ struct ContentView: View {
     @State var number: Int = 0
     @State var theme: Style = .colorful
     @State var color: Color = Style.colorful.backgroudColor
+    @State var name: String = "Thien"
     
     var body: some View {
         ZStack {
             color.ignoresSafeArea()
             HStack {
-                RadioButton(state: .dark, 
+                RadioButton(state: .dark,
                             checked: $theme,
                             backgroundColor: .gray)
-                RadioButton(state: .light, 
+                RadioButton(state: .light,
                             checked: $theme,
                             backgroundColor: Color(UIColor.lightGray.withAlphaComponent(0.7)))
                 RadioButton(state: .colorful,
                             checked: $theme,
                             backgroundColor: .blue)
             }.position(x: 50, y: 20)
-            HStack {
-                CalculatorView(isShowAlert: $isShowAlert,
-                               number: number)
-                CalculatorView(isShowAlert: $isShowAlert,
-                               number: number)
-                CalculatorView(isShowAlert: $isShowAlert,
-                               number: number)
+            VStack {
+                UserViewSwiftUI()
+                HStack {
+                    CalculatorView(isShowAlert: $isShowAlert,
+                                   number: number)
+                    CalculatorView(isShowAlert: $isShowAlert,
+                                   number: number)
+                    CalculatorView(isShowAlert: $isShowAlert,
+                                   number: number)
+                }
             }
+            .padding(.top, 60)
             .alert(isPresented: $isShowAlert, content: {
                 Alert(title: Text("Notification"),
                       message: Text("Out of range \n \(number == 0 ? "You should go up" : "You should go down")"),
@@ -54,7 +59,7 @@ struct ContentView: View {
 
 struct ContentViewPreviews: PreviewProvider {
     static var previews: some View {
-            ContentView()
+        ContentView()
             .environment(\.colorScheme, .light)
     }
 }
@@ -82,7 +87,7 @@ struct CalculatorView: View {
                 .foregroundColor(.gray)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                
+            
             Button(action: {
                 if number > 0 {
                     number = number - 1
