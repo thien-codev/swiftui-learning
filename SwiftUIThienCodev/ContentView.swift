@@ -17,6 +17,7 @@ struct ContentView: View {
     @State var greenRatio: CGFloat = 0
     @State var blueRatio: CGFloat = 0
     @State var onTapColor: Category?
+    @State var clockOffset: CGPoint = .zero
     
     private var backButton: some View {
         Button {
@@ -104,16 +105,21 @@ struct ContentView: View {
                         .padding(.top, 20)
                         .padding(.bottom, 0)
                     }
+                    
+                    let width: CGFloat = 120
+                    let height: CGFloat = 60
+                    
+                    ClockManager.manager.view(width: width, height: height, clockOffset: $clockOffset)
+                        .position(clockOffset)
+                        .highPriorityGesture(
+                            DragGesture()
+                                .onChanged { gesture in
+                                    clockOffset = gesture.location
+                                }
+                        )
                 }
-                
-                let width: CGFloat = 120
-                let height: CGFloat = 60
-                
-                ClockManager.manager.view(width: width, height: height)
-                    .padding(.top, view.size.height - height)
-                    .padding(.leading, view.size.width - width - 20)
             }
-            .navigationBarTitle(Text("Main").font(.subheadline), displayMode: .inline)
+            .navigationBarTitle(Text("Main"), displayMode: .inline)
             .navigationBarItems(leading: backButton)
             .onChange(of: redRatio, perform: { newValue in
                 rgbColor = Color(red: newValue, green: greenRatio, blue: blueRatio)

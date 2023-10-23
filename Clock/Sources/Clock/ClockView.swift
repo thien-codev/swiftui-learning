@@ -11,14 +11,20 @@ import UIKit
 
 struct ClockView: View {
     
-    init(width: CGFloat = 120, height: CGFloat = 80) {
+    init(width: CGFloat = 120, height: CGFloat = 80, clockOffset: Binding<CGPoint>) {
         self.width = width
         self.height = height
+        self._clockOffset = clockOffset
     }
     
     @ObservedObject var manager = ClockManager.manager
     @State var width: CGFloat
     @State var height: CGFloat
+    @State var readyAppear: Bool = false
+    @State var runningAppear: Bool = false
+    @State var finishAppear: Bool = false
+    
+    @Binding var clockOffset: CGPoint
     
     var itemHeight: CGFloat {
         height - 30
@@ -28,101 +34,143 @@ struct ClockView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .top) {
-            Rectangle()
-                .frame(width: width, height: height)
-                .cornerRadius(10)
+        ZStack(alignment: .center) {
+            
             switch manager.state {
             case .ready:
                 Button {
-                    manager.updateToNextState()
-                } label: {
-                    Text("Ready")
-                        .font(Font.custom("AmericanTypewriter-CondensedBold", size: 28))
-                        .foregroundColor(manager.state.tintColor)
-                        .multilineTextAlignment(.center)
-                    
-                }
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                .frame(width: width, height: height)
-            case .running:
-                Button {
-                    manager.updateToNextState()
-                } label: {
-                    HStack(spacing: 4) {
-                        VStack(spacing: 2) {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: itemWidth, height: itemHeight)
-                                    .cornerRadius(2)
-                                Text(manager.clockComponent.hour)
-                                    .font(Font.system(size: min(itemHeight, itemWidth) - 10))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(manager.state.tintColor)
-                            }
-                            Text("Hour")
-                                .font(Font.system(size: 8))
-                                .fontWeight(.bold)
-                                .foregroundColor(manager.state.tintColor)
-                        }
-                        VStack(spacing: 2) {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: itemWidth, height: itemHeight)
-                                    .cornerRadius(2)
-                                Text(manager.clockComponent.minute)
-                                    .font(Font.system(size: min(itemHeight, itemWidth) - 10))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(manager.state.tintColor)
-                            }
-                            Text("Minute")
-                                .font(Font.system(size: 8))
-                                .fontWeight(.bold)
-                                .foregroundColor(manager.state.tintColor)
-                        }
-                        VStack(spacing: 2) {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: itemWidth, height: itemHeight)
-                                    .cornerRadius(2)
-                                Text(manager.clockComponent.second)
-                                    .font(Font.system(size: min(itemHeight, itemWidth) - 10))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(manager.state.tintColor)
-                            }
-                            Text("Second")
-                                .font(Font.system(size: 8))
-                                .fontWeight(.bold)
-                                .foregroundColor(manager.state.tintColor)
-                        }
+                    withAnimation {
+                        readyAppear = false
                     }
-                    .foregroundColor(.gray.opacity(0.6))
-                    .padding(.top, 10)
+                    manager.updateToNextState()
+                } label: {
+                    Circle()
+                        .frame(width: width, height: height)
+                        .overlay {
+                            Circle()
+                                .stroke(manager.state.tintColor, lineWidth: 3)
+                        }
+                        .foregroundColor(.black)
+                        .overlay {
+                            Image(systemName: "arrowtriangle.right.fill")
+                                .foregroundColor(manager.state.tintColor)
+                        }
                 }
+//                .highPriorityGesture(
+//                    DragGesture()
+//                        .onChanged { gesture in
+//                            clockOffset = gesture.location
+//                        }
+//                )
+                .shadow(color: .black, radius: 0, x: 8, y: 8)
+                .scaleEffect(readyAppear ? 1 : 0)
+                .onAppear {
+                    readyAppear = true
+                }
+            case .running:
+                ZStack {
+                    Rectangle()
+                        .frame(width: width, height: height)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(manager.state.tintColor, lineWidth: 2)
+                        )
+                        .shadow(color: .black, radius: 0, x: 8, y: 8)
+                    Button {
+                        withAnimation {
+                            runningAppear = false
+                        }
+                        manager.updateToNextState()
+                    } label: {
+                        HStack(spacing: 4) {
+                            VStack(spacing: 2) {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: itemWidth, height: itemHeight)
+                                        .cornerRadius(2)
+                                    Text(manager.clockComponent.hour)
+                                        .font(Font.system(size: min(itemHeight, itemWidth) - 10))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(manager.state.tintColor)
+                                }
+                                Text("Hour")
+                                    .font(Font.system(size: 8))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(manager.state.tintColor)
+                            }
+                            VStack(spacing: 2) {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: itemWidth, height: itemHeight)
+                                        .cornerRadius(2)
+                                    Text(manager.clockComponent.minute)
+                                        .font(Font.system(size: min(itemHeight, itemWidth) - 10))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(manager.state.tintColor)
+                                }
+                                Text("Minute")
+                                    .font(Font.system(size: 8))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(manager.state.tintColor)
+                            }
+                            VStack(spacing: 2) {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: itemWidth, height: itemHeight)
+                                        .cornerRadius(2)
+                                    Text(manager.clockComponent.second)
+                                        .font(Font.system(size: min(itemHeight, itemWidth) - 10))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(manager.state.tintColor)
+                                }
+                                Text("Second")
+                                    .font(Font.system(size: 8))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(manager.state.tintColor)
+                            }
+                        }
+                        .foregroundColor(.gray.opacity(0.6))
+                        .padding(.top, 10)
+                    }
+                }
+                .scaleEffect(runningAppear ? 1 : 0)
+                .onAppear {
+                    runningAppear = true
+                }
+
             case .finish:
                 Button {
+                    withAnimation {
+                        finishAppear = false
+                    }
                     manager.updateToNextState()
                 } label: {
-                    Text("Stop")
-                        .font(Font.custom("AmericanTypewriter-CondensedBold", size: 28))
-                        .foregroundColor(Color(uiColor: UIColor.systemTeal))
-                        .multilineTextAlignment(.center)
+                    Circle()
+                        .frame(width: width, height: height)
+                        .overlay {
+                            Circle()
+                                .stroke(manager.state.tintColor, lineWidth: 3)
+                        }
+                        .foregroundColor(.black)
+                        .overlay {
+                            Image(systemName: "pause.fill")
+                                .foregroundColor(manager.state.tintColor)
+                        }
                 }
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                .frame(width: width, height: height)
+                .shadow(color: .black, radius: 0, x: 8, y: 8)
+                .onAppear {
+                    finishAppear = true
+                }
+                .scaleEffect(finishAppear ? 1 : 0)
             }
         }
-        .shadow(color: .black, radius: 0, x: 8, y: 8)
-        .animation(.easeInOut(duration: 0.3))
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(manager.state.tintColor, lineWidth: 2)
-        )
+        .animation(.easeInOut(duration: 0.5))
     }
 }
 
 struct ClockViewPreview: PreviewProvider {
     static var previews: some View {
-        ClockView()
+        ClockView(clockOffset: .constant(.zero))
     }
 }

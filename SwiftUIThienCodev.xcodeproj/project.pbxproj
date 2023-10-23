@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A204A1D22ADFB54700EDEF21 /* Clock in Frameworks */ = {isa = PBXBuildFile; productRef = A204A1D12ADFB54700EDEF21 /* Clock */; };
+		A2137CE22AE67AEE00788B97 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2137CE12AE67AEE00788B97 /* TestView.swift */; };
 		A285D4682AD927F300DF45EE /* SwiftUIThienCodevApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D4672AD927F300DF45EE /* SwiftUIThienCodevApp.swift */; };
 		A285D46A2AD927F300DF45EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D4692AD927F300DF45EE /* ContentView.swift */; };
 		A285D46C2AD927F600DF45EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A285D46B2AD927F600DF45EE /* Assets.xcassets */; };
@@ -20,11 +21,13 @@
 		A285D4802ADD446700DF45EE /* CustomViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A285D47F2ADD446700DF45EE /* CustomViewSwiftUI.swift */; };
 		A2AC73182AE12DDF00EAFE3C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AC73172AE12DDF00EAFE3C /* LoginView.swift */; };
 		A2B8372C2AE2697300B524C8 /* DemoPhindAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8372B2AE2697300B524C8 /* DemoPhindAI.swift */; };
+		A2B837302AE6072C00B524C8 /* DemoPhindAIVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8372F2AE6072C00B524C8 /* DemoPhindAIVM.swift */; };
 		A2DD04002AE227A3004C2A86 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD03FF2AE227A3004C2A86 /* LoginVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A204A1CF2ADFB37C00EDEF21 /* Clock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Clock; sourceTree = SOURCE_ROOT; };
+		A2137CE12AE67AEE00788B97 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		A285D4642AD927F300DF45EE /* SwiftUIThienCodev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIThienCodev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A285D4672AD927F300DF45EE /* SwiftUIThienCodevApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIThienCodevApp.swift; sourceTree = "<group>"; };
 		A285D4692AD927F300DF45EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		A285D47F2ADD446700DF45EE /* CustomViewSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewSwiftUI.swift; sourceTree = "<group>"; };
 		A2AC73172AE12DDF00EAFE3C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A2B8372B2AE2697300B524C8 /* DemoPhindAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPhindAI.swift; sourceTree = "<group>"; };
+		A2B8372F2AE6072C00B524C8 /* DemoPhindAIVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPhindAIVM.swift; sourceTree = "<group>"; };
 		A2DD03FF2AE227A3004C2A86 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,8 @@
 				A285D47F2ADD446700DF45EE /* CustomViewSwiftUI.swift */,
 				A2DD03FF2AE227A3004C2A86 /* LoginVM.swift */,
 				A2B8372B2AE2697300B524C8 /* DemoPhindAI.swift */,
+				A2B8372F2AE6072C00B524C8 /* DemoPhindAIVM.swift */,
+				A2137CE12AE67AEE00788B97 /* TestView.swift */,
 			);
 			path = SwiftUIThienCodev;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			files = (
 				A285D4782ADD354F00DF45EE /* CustomView.swift in Sources */,
 				A2B8372C2AE2697300B524C8 /* DemoPhindAI.swift in Sources */,
+				A2137CE22AE67AEE00788B97 /* TestView.swift in Sources */,
 				A285D4802ADD446700DF45EE /* CustomViewSwiftUI.swift in Sources */,
+				A2B837302AE6072C00B524C8 /* DemoPhindAIVM.swift in Sources */,
 				A285D46A2AD927F300DF45EE /* ContentView.swift in Sources */,
 				A2AC73182AE12DDF00EAFE3C /* LoginView.swift in Sources */,
 				A2DD04002AE227A3004C2A86 /* LoginVM.swift in Sources */,
