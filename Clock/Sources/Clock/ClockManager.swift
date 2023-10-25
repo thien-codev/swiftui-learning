@@ -14,12 +14,7 @@ enum ClockState {
     case finish
     
     var tintColor: Color {
-        switch self {
-        case .ready, .finish:
-            return Color(UIColor.systemTeal)
-        case .running:
-            return "#39ff14".toColor
-        }
+        return "#39ff14".toColor
     }
 }
 
@@ -32,8 +27,8 @@ public class ClockManager: ObservableObject {
     
     private var timer: Timer?
     
-    public func view(width: CGFloat = 120, height: CGFloat = 80) -> some View {
-        return ClockView(width: width, height: height)
+    public func view(width: CGFloat = 120, height: CGFloat = 80, clockOffset: Binding<CGPoint>) -> some View {
+        return ClockView(width: width, height: height, clockOffset: clockOffset)
     }
     
     func updateToNextState() {
