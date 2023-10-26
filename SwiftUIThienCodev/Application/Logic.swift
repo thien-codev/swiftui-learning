@@ -32,15 +32,15 @@ enum ActionType: CaseIterable {
     var value: QuickAction {
         switch self {
         case .first:
-            QuickAction(type: "First", title: "First title", subtitle: "First subtitle", icon: "heart.fill")
+            return QuickAction(type: "First", title: "First title", subtitle: "First subtitle", icon: "heart.fill")
         case .second:
-            QuickAction(type: "Second", title: "Second title", subtitle: "Second subtitle", icon: "person.fill")
+            return QuickAction(type: "Second", title: "Second title", subtitle: "Second subtitle", icon: "person.fill")
         case .third:
-            QuickAction(type: "Third", title: "Third title", subtitle: "Third subtitle", icon: "doc.fill")
+            return QuickAction(type: "Third", title: "Third title", subtitle: "Third subtitle", icon: "doc.fill")
         case .forth:
-            QuickAction(type: "Forth", title: "Forth title", subtitle: "Forth subtitle", icon: "folder")
+            return QuickAction(type: "Forth", title: "Forth title", subtitle: "Forth subtitle", icon: "folder")
         case .fifth:
-            QuickAction(type: "Fifth", title: "Fifth title", subtitle: "Fifth subtitle", icon: "scribble")
+            return QuickAction(type: "Fifth", title: "Fifth title", subtitle: "Fifth subtitle", icon: "scribble")
         }
     }
 }

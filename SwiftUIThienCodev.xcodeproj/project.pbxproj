@@ -23,6 +23,8 @@
 		A2B8372C2AE2697300B524C8 /* DemoPhindAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8372B2AE2697300B524C8 /* DemoPhindAI.swift */; };
 		A2B837302AE6072C00B524C8 /* DemoPhindAIVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B8372F2AE6072C00B524C8 /* DemoPhindAIVM.swift */; };
 		A2DD04002AE227A3004C2A86 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD03FF2AE227A3004C2A86 /* LoginVM.swift */; };
+		A2F86E5C2AEA6E3500C616C4 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F86E5B2AEA6E3500C616C4 /* Test.swift */; };
+		A2F86E602AEA7B3200C616C4 /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F86E5F2AEA7B3200C616C4 /* ItemDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A2B8372B2AE2697300B524C8 /* DemoPhindAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPhindAI.swift; sourceTree = "<group>"; };
 		A2B8372F2AE6072C00B524C8 /* DemoPhindAIVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPhindAIVM.swift; sourceTree = "<group>"; };
 		A2DD03FF2AE227A3004C2A86 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		A2F86E5B2AEA6E3500C616C4 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		A2F86E5F2AEA7B3200C616C4 /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				8B8E3D952AE838AF009D9E7E /* Animations */,
 				8B8E3D942AE8389A009D9E7E /* Login */,
 				A285D4692AD927F300DF45EE /* ContentView.swift */,
+				A2F86E5B2AEA6E3500C616C4 /* Test.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8B8E3D9F2AE96BBF009D9E7E /* ParalaxScrolling.swift */,
+				A2F86E5F2AEA7B3200C616C4 /* ItemDetail.swift */,
 			);
 			path = "Paralax Scrolling";
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				8B8E3D9B2AE8390F009D9E7E /* Helper.swift in Sources */,
 				A285D4782ADD354F00DF45EE /* CustomView.swift in Sources */,
 				A2B8372C2AE2697300B524C8 /* DemoPhindAI.swift in Sources */,
+				A2F86E5C2AEA6E3500C616C4 /* Test.swift in Sources */,
 				A2137CE22AE67AEE00788B97 /* MagicCircle.swift in Sources */,
 				8B8E3D9D2AE83B99009D9E7E /* Logic.swift in Sources */,
 				A285D4802ADD446700DF45EE /* CustomViewSwiftUI.swift in Sources */,
@@ -253,6 +260,7 @@
 				8B8E3D9A2AE8390F009D9E7E /* SwiftUIThienCodevApp.swift in Sources */,
 				A2AC73182AE12DDF00EAFE3C /* LoginView.swift in Sources */,
 				A2DD04002AE227A3004C2A86 /* LoginVM.swift in Sources */,
+				A2F86E602AEA7B3200C616C4 /* ItemDetail.swift in Sources */,
 				A285D47E2ADD3BB800DF45EE /* CustomItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
